@@ -1,65 +1,138 @@
-<details>
-<summary>Ubuntu and Kali as Windows subsystems installed</summary>
+## Linux basic commands
 
-![](screenshots/Ubuntu.png)
-<br/>
-![](screenshots/Debian.png)
-</details>
-<br/>
+```ls``` - Lists information about file(s)
 
-<details>
-<summary>
-Established SSH connection with cleartext password authN
-</summary>
+```pwd``` - Prints the full filename of the current working directory
 
-#### Remote server
-```diff
-! Set PasswordAuth to Yes
-```
-![](screenshots/sshd_config.png)
-<br/>
-![](screenshots/ssh-server.png)
-#### Client
-![](screenshots/client_access.png)
-</details>
-<br/>
+```clear``` - Clears terminal screen
 
-<details>
-<summary>
-Established SSH connection with public key
-</summary>
+```cd``` - Changes the current working directory
 
-#### Client
-![](screenshots/scp_client.png)
-<br/>
+```pushd``` - Saves and then changes the current directory
 
-#### Remote server
-![](screenshots/pubkey_server.png)
-```diff
-! It's important to create authorized_keys file containing keys
-user@DESKTOP-V7R5J56:~/.ssh$ cat uploaded_key.pub >> authorized_keys
-```
-<br/>
+```popd``` - Restores the previous value of the current directory
 
-![](screenshots/sshd_config2.png)
+```file``` - Determines file type
 
-#### Client
-![](screenshots/client_pubkey-access.png)
-</details>
-<br/>
+```find``` - Searches for files that meet a desired criteria
 
-<details>
-<summary>
-What is SSH port forwarding?
-</summary>
+```which``` - Searches the user's $path for a program file
 
-<p>
-SSH port forwarding is a mechanism in SSH for tunneling application ports from the client machine to the server machine, or vice versa. 
-It can be used for adding encryption to legacy applications, going through firewalls,
-and some system administrators and IT professionals use it for opening backdoors into the internal network from their home machines. 
-It can also be abused by hackers and malware to open access from the Internet to the internal network.
-</p>
+```history``` - Shows commands history
 
-![](screenshots/port-forwarding.png)
-</details>
+```whatis``` - Searches the manual page names and displays the manual page descriptions of any name matched
+
+```apropos``` - Searches Help manual pages (man -k)
+
+```man``` - Help manual
+
+```mkdir``` - Creates new folder(s)
+
+```touch``` - Changes file timestamps
+
+```cp``` - Copies one or more files to another location
+
+```mv``` - Moves or rename files or directories
+
+```rm``` - 	Removes files
+
+```rmdir``` - Removes folder
+
+```cut``` - Divide a file into several parts
+
+```nano``` - is a small and friendly editor
+
+```vim``` - is a highly configurable text editor
+
+### Redirecting the Output
+
+---
+
+We use the > symbol to redirect the output of a command. For example, to create a file called list1 containing a list of
+fruit, type
+
+```$ cat > list1```
+
+Then type in the names of some fruit. Press [Return] after each one.
+
+```> orange banana apple ^D (Control D to stop)```
+
+What happens is the cat command reads the standard input (the keyboard) and the > redirects the output, which normally
+goes to the screen, into a file called list1 To read the contents of the file, type
+
+```$ cat list1```
+
+---
+
+### Redirecting the Output 
+
+---
+
+Use the < symbol to redirect the input of a command. 
+The command ```sort``` alphabetically or numerically sorts a list. 
+Type
+
+```$ sort```
+
+Then type in the names of some vegetables. Press [Return] after each one.
+
+```carrot beetroot artichoke ^D (Control D to stop)```
+
+The output will be
+
+```artichoke beetroot carrot```
+
+Using < you can redirect the input to come from a file rather than the keyboard. For example, to sort the list of fruit, type
+
+```$ sort < biglist```
+
+and the sorted list will be output to the screen. To output the sorted list to a file, type,
+
+```$ sort < biglist > slist```
+
+Use cat to read the contents of the file slist
+
+---
+
+```echo ``` - Displays the string(s) to output.
+
+```sudo``` - allows a permitted user to execute a command as the superuser or another user, as specified by the security
+policy.
+
+```su``` - Allows to run commands with a substitute user and group ID.
+
+```users``` - Lists users currently logged in
+
+```who``` - Prints information about users who are currently logged in.
+
+```id``` - Prints user and group id's
+
+```watch``` - Executes/displays a program periodically
+
+```free``` - Displays memory usage
+
+```df``` - displays the amount of disk space available on the file system containing each file name argument.
+
+```kill``` - Kills a process by specifying its PID
+
+```ps``` - displays information about a selection of the active processes.
+
+```top``` - Lists processes running on the system
+
+```grep``` - Searches file(s) for lines that match a given pattern
+
+```alias``` - Enables a replacement of a word by another string. It is mainly used for abbreviating a system command, or
+for adding default arguments to a regularly used command.
+
+```wc``` - Prints byte, word, and line counts
+
+```uniq``` - Filter adjacent matching lines from INPUT, writing to OUTPUT.
+
+```sort``` - Sort text files.
+
+```diff``` - Display the differences between two files.
+
+```awk``` - Find and Replace text, database sort/validate/index.
+
+```printenv``` - Print environment variables.
 
